@@ -1,46 +1,81 @@
-N-Gram Shakespearean Text Generator
+# 📜 Shakespearean N-Gram Text Generator
 
-Overview
+## **Overview**
+This project is a **Shakespearean-style text generator** using **N-grams** (bigrams, trigrams, or four-grams). The model is trained on Shakespeare's complete works from **Project Gutenberg**.
 
-This project generates text in Shakespearean style using an N-Gram model. It allows users to choose between bigrams, trigrams, and four-grams for text generation.
+## **How It Works**
+- Loads and tokenizes **Shakespeare’s works** from a manually downloaded text file.
+- Uses an **N-gram model** to generate Shakespeare-like sentences.
+- Allows the user to **select the N-gram size** (2, 3, or 4).
+- Outputs a random **Shakespearean-style text sample**.
 
-Features
+## **Installation**
+### **1️⃣ Clone the Repository**
+```bash
+git clone https://github.com/YOUR_USERNAME/NLP-Text-Generator.git
+cd NLP-Text-Generator
+```
 
-Preprocesses text into tokens
+### **2️⃣ Set Up a Virtual Environment**
+```bash
+python3 -m venv venv
+source venv/bin/activate  # On macOS/Linux
+venv\Scripts\activate  # On Windows
+```
 
-Generates N-grams (2, 3, or 4)
+### **3️⃣ Install Dependencies**
+```bash
+pip install -r requirements.txt
+```
 
-Computes probability distributions for text generation
+### **4️⃣ Download the Shakespeare Corpus**
+Manually download Shakespeare’s full works:
+```bash
+mkdir -p nltk_data/corpora/shakespeare
+curl -o nltk_data/corpora/shakespeare/shakespeare.txt https://www.gutenberg.org/cache/epub/100/pg100.txt
+```
 
-Outputs a random sequence of text based on the N-gram model
-
-Dependencies
-
-Ensure you have the following installed:
-
-pip install nltk
-
-Running the Script
-
-Execute the script using:
-
+## **Usage**
+Run the program:
+```bash
 python main.py
+```
+Follow the prompts to **select an N-gram size** (2, 3, or 4), and the script will generate a text sample.
 
-The script will prompt for an N-gram size (2, 3, or 4) and generate a text sample.
+## **Example Output**
+```
+Enter the n-gram size (2, 3, 4): 3
+Generating text with 3-grams:
+Generated Text: womanhood. think, we are convented upon a wretch whose natural gifts were poor and speech unable; beyond all talents. whilst i go to ’t well, protect yourself. king henry...
+```
 
-Project Structure
+## **Project Structure**
+```
+NLP-Text-Generator/
+│-- src/
+│   │-- ngram_model.py  # Handles text processing & N-gram logic
+│-- data/
+│   │-- shakespeare.txt  # Downloaded Shakespeare text
+│-- main.py  # Runs the text generator
+│-- tests/
+│   │-- test_ngram.py  # Unit tests
+│-- requirements.txt  # Dependencies
+│-- README.md  # Documentation
+```
 
-|-- src/
-|   |-- ngram_model.py  # N-gram generation functions
-|   |-- text_generation.py  # Text synthesis functions
-|-- data/
-|   |-- shakespeare.txt  # Input text corpus
-|-- main.py  # Entry point for text generation
-|-- README.md  # Documentation
-|-- tests/
-|   |-- test_ngram.py  # Unit tests
+## **Running Tests**
+```bash
+python -m unittest discover tests/
+```
 
-License
+## **Next Steps & Future Work**
+- Convert the project into a **web app** using Flask.
+- Train a **deep learning model (LSTM or GPT-2)** instead of N-grams.
+- Improve punctuation handling and sentence coherence.
+- Deploy as a **Shakespearean chatbot**!
 
-MIT License
+## **License**
+MIT License.
 
+---
+🚀 **Created by Anthony-Lee Sánchez**
